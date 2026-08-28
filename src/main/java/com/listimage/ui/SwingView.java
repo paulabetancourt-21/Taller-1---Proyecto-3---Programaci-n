@@ -11,6 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Capa de presentación que muestra una única ventana ({@code JFrame}) con la
@@ -19,6 +21,7 @@ import javax.swing.SwingConstants;
  */
 public class SwingView {
 
+    private static final Logger log = LoggerFactory.getLogger(SwingView.class);
     private static final String WINDOW_TITLE = "Navegación de Imágenes";
     private static final String NO_MORE_IMAGES_MESSAGE = "No hay más imágenes";
     private static final String NO_IMAGES_MESSAGE = "No hay imágenes registradas";
@@ -55,7 +58,9 @@ public class SwingView {
         updateImage();
         frame.pack();
         frame.setLocationRelativeTo(null);
+        log.debug("SwingView inicializada con 5 imágenes");
         frame.setVisible(true);
+        log.info("Ventana de navegación de imágenes mostrada");
     }
 
     private JPanel buildButtonPanel() {

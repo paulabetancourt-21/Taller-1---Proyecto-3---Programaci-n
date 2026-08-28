@@ -1,0 +1,28 @@
+2026-08-28 10:11:53.436 [main] INFO  com.listimage.Main - Iniciando aplicación de navegación de imágenes
+2026-08-28 10:11:53.548 [main] DEBUG com.listimage.model.Image - Imagen creada con id 1
+2026-08-28 10:11:53.548 [main] DEBUG com.listimage.model.Image - Imagen creada con id 2
+2026-08-28 10:11:53.551 [main] DEBUG com.listimage.model.Image - Imagen creada con id 3
+2026-08-28 10:11:53.551 [main] DEBUG com.listimage.model.Image - Imagen creada con id 4
+2026-08-28 10:11:53.551 [main] DEBUG com.listimage.model.Image - Imagen creada con id 5
+2026-08-28 10:11:53.551 [main] DEBUG com.listimage.list.DoublyLinkedList - Primer nodo (head y tail) añadido en la lista
+2026-08-28 10:11:53.551 [main] INFO  com.listimage.service.ImageManager - Solicitud de agregar imagen procesada. Total actual: 1
+2026-08-28 10:11:53.551 [main] DEBUG com.listimage.list.DoublyLinkedList - Nuevo nodo añadido al final de la lista (tail actualizado)
+2026-08-28 10:11:53.551 [main] INFO  com.listimage.service.ImageManager - Solicitud de agregar imagen procesada. Total actual: 2
+2026-08-28 10:11:53.551 [main] DEBUG com.listimage.list.DoublyLinkedList - Nuevo nodo añadido al final de la lista (tail actualizado)
+2026-08-28 10:11:53.551 [main] INFO  com.listimage.service.ImageManager - Solicitud de agregar imagen procesada. Total actual: 3
+2026-08-28 10:11:53.551 [main] DEBUG com.listimage.list.DoublyLinkedList - Nuevo nodo añadido al final de la lista (tail actualizado)
+2026-08-28 10:11:53.551 [main] INFO  com.listimage.service.ImageManager - Solicitud de agregar imagen procesada. Total actual: 4
+2026-08-28 10:11:53.551 [main] DEBUG com.listimage.list.DoublyLinkedList - Nuevo nodo añadido al final de la lista (tail actualizado)
+2026-08-28 10:11:53.551 [main] INFO  com.listimage.service.ImageManager - Solicitud de agregar imagen procesada. Total actual: 5
+2026-08-28 10:11:53.551 [main] INFO  com.listimage.Main - Se cargaron 5 imágenes de prueba
+2026-08-28 10:11:53.616 [main] DEBUG com.listimage.list.DoublyLinkedList - Se recuperaron 5 imágenes de la lista
+2026-08-28 10:11:53.658 [main] DEBUG com.listimage.ui.SwingView - SwingView inicializada con 5 imágenes
+2026-08-28 10:11:53.676 [main] INFO  com.listimage.ui.SwingView - Ventana de navegación de imágenes mostrada
+2026-08-28 10:11:57.739 [AWT-EventQueue-0] DEBUG com.listimage.list.DoublyLinkedList - Se recuperaron 5 imágenes de la lista
+2026-08-28 10:11:58.211 [AWT-EventQueue-0] DEBUG com.listimage.list.DoublyLinkedList - Se recuperaron 5 imágenes de la lista
+2026-08-28 10:11:58.668 [AWT-EventQueue-0] DEBUG com.listimage.list.DoublyLinkedList - Se recuperaron 5 imágenes de la lista
+2026-08-28 10:11:59.094 [AWT-EventQueue-0] DEBUG com.listimage.list.DoublyLinkedList - Se recuperaron 5 imágenes de la lista
+2026-08-28 10:12:01.198 [AWT-EventQueue-0] DEBUG com.listimage.list.DoublyLinkedList - Se recuperaron 5 imágenes de la lista
+2026-08-28 10:12:01.418 [AWT-EventQueue-0] DEBUG com.listimage.list.DoublyLinkedList - Se recuperaron 5 imágenes de la lista
+2026-08-28 10:12:01.574 [AWT-EventQueue-0] DEBUG com.listimage.list.DoublyLinkedList - Se recuperaron 5 imágenes de la lista
+2026-08-28 10:12:02.001 [AWT-EventQueue-0] DEBUG com.listimage.list.DoublyLinkedList - Se recuperaron 5 imágenes de la lista

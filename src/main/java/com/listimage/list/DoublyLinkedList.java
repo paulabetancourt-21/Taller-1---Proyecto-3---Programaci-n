@@ -4,6 +4,8 @@ import com.listimage.exceptions.InvalidDataException;
 import com.listimage.node.Node;
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Lista doblemente enlazada genérica. Mantiene los punteros {@code head} y
@@ -13,6 +15,7 @@ import java.util.List;
  * @param <T> tipo del elemento almacenado en la lista
  */
 public class DoublyLinkedList<T> implements LinkedList<T> {
+    private static final Logger log = LoggerFactory.getLogger(DoublyLinkedList.class);
     private Node<T> head;
     private Node<T> tail;
     private int size;
@@ -32,9 +35,11 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
         Node<T> newNode = new Node<>(element);
         if (size == 0) {
             head = newNode;
+            log.debug("Primer nodo (head y tail) añadido en la lista");
         } else {
             tail.setNext(newNode);
             newNode.setPrevious(tail);
+            log.debug("Nuevo nodo añadido al final de la lista (tail actualizado)");
         }
         tail = newNode;
         size++;
@@ -63,6 +68,8 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
             elements.add(current.getData());
             current = current.getNext();
         }
+        log.debug("Se recuperaron {} imágenes de la lista", size);  
         return elements;
+        
     }
 }

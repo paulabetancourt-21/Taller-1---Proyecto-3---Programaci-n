@@ -6,7 +6,8 @@ import com.listimage.exceptions.InvalidImageException;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * Entidad de dominio que representa una imagen cargada completamente en memoria,
  * con su identificador entero consecutivo y su contenido como {@code BufferedImage}.
@@ -14,8 +15,9 @@ import lombok.ToString;
 @Getter
 @ToString(exclude = "data")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Image {
 
+public class Image {
+    private static final Logger log = LoggerFactory.getLogger(Image.class);
     private static final AtomicInteger counter = new AtomicInteger(0);
     @EqualsAndHashCode.Include
     private final int id;
@@ -32,7 +34,9 @@ public class Image {
         if (data == null) {
             throw new InvalidImageException("El contenido BufferedImage no puede ser nulo");
         }
+    
         this.id = counter.incrementAndGet();
         this.data = data;
+        log.debug("Imagen creada con id {}", this.id);
     }
 }
