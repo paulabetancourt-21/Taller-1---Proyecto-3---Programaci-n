@@ -1,5 +1,7 @@
 package com.listimage.node;
 
+import com.listimage.exceptions.InvalidDataException;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,11 +14,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Node<T> {
-
     private final T data;
-
     private Node<T> next;
-
     private Node<T> previous;
 
     /**
@@ -24,11 +23,11 @@ public class Node<T> {
      * {@code next} y {@code previous} como {@code null}.
      *
      * @param data dato almacenado en el nodo; no debe ser nulo
-     * @throws IllegalArgumentException si data es nulo
+     * @throws InvalidDataException si data es nulo
      */
     public Node(T data) {
         if (data == null) {
-            throw new IllegalArgumentException("El dato del nodo no puede ser nulo");
+            throw new InvalidDataException("El dato del nodo no puede ser nulo");
         }
         this.data = data;
         this.next = null;

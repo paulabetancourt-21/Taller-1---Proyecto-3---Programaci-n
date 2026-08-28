@@ -1,5 +1,6 @@
 package com.listimage.service;
 
+import com.listimage.exceptions.InvalidImageException;
 import com.listimage.model.Image;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public interface ImageService {
      * Agrega una imagen a la lista.
      *
      * @param image la imagen a agregar; no debe ser nula
-     * @throws IllegalArgumentException si image es nula
+     * @throws InvalidImageException si image es nula
      */
     void add(Image image);
 

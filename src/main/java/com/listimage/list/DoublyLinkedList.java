@@ -1,5 +1,6 @@
 package com.listimage.list;
 
+import com.listimage.exceptions.InvalidDataException;
 import com.listimage.node.Node;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,11 +13,8 @@ import java.util.List;
  * @param <T> tipo del elemento almacenado en la lista
  */
 public class DoublyLinkedList<T> implements LinkedList<T> {
-
     private Node<T> head;
-
     private Node<T> tail;
-
     private int size;
 
     /**
@@ -24,12 +22,12 @@ public class DoublyLinkedList<T> implements LinkedList<T> {
      * puntero {@code tail} y enlazando el antiguo último nodo con el nuevo.
      *
      * @param element el elemento a agregar; no debe ser nulo
-     * @throws IllegalArgumentException si element es nulo
+     * @throws InvalidDataException si element es nulo
      */
     @Override
     public void addLast(T element) {
         if (element == null) {
-            throw new IllegalArgumentException("El elemento a insertar no puede ser nulo");
+            throw new InvalidDataException("El elemento a insertar no puede ser nulo");
         }
         Node<T> newNode = new Node<>(element);
         if (size == 0) {

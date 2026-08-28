@@ -1,5 +1,6 @@
 package com.listimage.service;
 
+import com.listimage.exceptions.InvalidImageException;
 import com.listimage.list.LinkedList;
 import com.listimage.model.Image;
 import java.util.List;
@@ -11,14 +12,12 @@ import lombok.RequiredArgsConstructor;
  */
 @RequiredArgsConstructor
 public class ImageManager implements ImageService {
-
     private final LinkedList<Image> list;
-
     /**
      * Agrega una imagen al final de la lista.
      *
      * @param image la imagen a agregar; no debe ser nula
-     * @throws IllegalArgumentException si image es nula
+     * @throws InvalidImageException si imagen es nula
      */
     @Override
     public void add(Image image) {

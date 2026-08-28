@@ -2,6 +2,7 @@ package com.listimage.model;
 
 import java.awt.image.BufferedImage;
 import java.util.concurrent.atomic.AtomicInteger;
+import com.listimage.exceptions.InvalidImageException;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
@@ -16,10 +17,8 @@ import lombok.ToString;
 public class Image {
 
     private static final AtomicInteger counter = new AtomicInteger(0);
-
     @EqualsAndHashCode.Include
     private final int id;
-
     private final BufferedImage data;
 
     /**
@@ -27,11 +26,11 @@ public class Image {
      * un identificador entero consecutivo a partir de 1.
      *
      * @param data contenido de la imagen cargado en memoria; no debe ser nulo
-     * @throws IllegalArgumentException si data es nulo
+     * @throws InvalidImageException si data es nulo
      */
     public Image(BufferedImage data) {
         if (data == null) {
-            throw new IllegalArgumentException("El contenido BufferedImage no puede ser nulo");
+            throw new InvalidImageException("El contenido BufferedImage no puede ser nulo");
         }
         this.id = counter.incrementAndGet();
         this.data = data;

@@ -1,5 +1,6 @@
 package com.listimage.util;
 
+import com.listimage.exceptions.InvalidDimensionException;
 import com.listimage.model.Image;
 import java.awt.Color;
 import java.awt.FontMetrics;
@@ -13,9 +14,7 @@ import java.util.List;
  * usando {@code java.awt.Graphics2D}, sin depender de archivos externos.
  */
 public class ImageFactory {
-
     private static final int IMAGE_SIZE = 100;
-
     private static final int IMAGE_COUNT = 5;
 
     /**
@@ -42,12 +41,13 @@ public class ImageFactory {
      * @return la imagen generada
      */
     private BufferedImage createSampleImage(int width, int height, int index) {
+        if (width <= 0 || height <= 0) {
+            throw new InvalidDimensionException("Las dimensiones deben ser mayores que cero");
+        }
         BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2d = img.createGraphics();
-
         g2d.setColor(new Color((index * 37) % 256, (index * 59) % 256, (index * 83) % 256));
         g2d.fillRect(0, 0, width, height);
-
         String text = String.valueOf(index);
         g2d.setColor(Color.WHITE);
         FontMetrics fm = g2d.getFontMetrics();

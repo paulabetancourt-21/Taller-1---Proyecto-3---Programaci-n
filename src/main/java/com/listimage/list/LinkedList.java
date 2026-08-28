@@ -2,6 +2,8 @@ package com.listimage.list;
 
 import java.util.List;
 
+import com.listimage.exceptions.InvalidDataException;
+
 /**
  * Contrato para una lista doblemente enlazada genérica.
  *
@@ -13,7 +15,7 @@ public interface LinkedList<T> {
      * Agrega un elemento al final de la lista.
      *
      * @param element el elemento a agregar; no debe ser nulo
-     * @throws IllegalArgumentException si element es nulo
+     * @throws InvalidDataException si elemento es nulo
      */
     void addLast(T element);
 

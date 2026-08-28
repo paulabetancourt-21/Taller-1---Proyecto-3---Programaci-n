@@ -20,19 +20,12 @@ import javax.swing.SwingConstants;
 public class SwingView {
 
     private static final String WINDOW_TITLE = "Navegación de Imágenes";
-
     private static final String NO_MORE_IMAGES_MESSAGE = "No hay más imágenes";
-
     private static final String NO_IMAGES_MESSAGE = "No hay imágenes registradas";
-
     private final ImageService service;
-
     private int currentIndex;
-
     private int totalImages;
-
     private final JLabel imageLabel;
-
     private final JLabel positionLabel;
 
     /**
